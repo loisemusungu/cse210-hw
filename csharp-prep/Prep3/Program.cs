@@ -14,18 +14,24 @@ class Program
         string guess = Console.ReadLine();
         int guessInt = int.Parse(guess);
         
-
-        if (guessInt == magicNumberInt)
+        while (guessInt != magicNumberInt)
         {
-            Console.WriteLine("You guessed the magic number!");
+            if (guessInt < magicNumberInt)
+            {
+                Console.WriteLine("Higher.");
+            }
+            else
+            {
+                Console.WriteLine("Lower.");
+            }
+            
+            // Request another guess
+            Console.Write("What is your guess? ");
+            guess = Console.ReadLine();
+            guessInt = int.Parse(guess);
         }
-        if (guessInt < magicNumberInt)
-        {
-            Console.WriteLine("Higher.");
-        }
-        if (guessInt > magicNumberInt)
-        {
-            Console.WriteLine("Lower.");
-        }
+        
+        // Print the success message after exiting the loop
+        Console.WriteLine("You guessed the magic number!");
     }
 }
