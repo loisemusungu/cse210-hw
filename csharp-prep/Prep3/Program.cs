@@ -6,9 +6,8 @@ class Program
     {
         Console.WriteLine("Hello Prep3 World!");
 
-        Console.Write("What is the magic number? ");
-        string magicNumber = Console.ReadLine();
-        int magicNumberInt = int.Parse(magicNumber);
+        Random randomGenerator = new Random();
+        int magicNumberInt = randomGenerator.Next(1, 101);
 
         Console.Write("What is your guess? ");
         string guess = Console.ReadLine();
