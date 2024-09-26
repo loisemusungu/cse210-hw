@@ -1,3 +1,5 @@
+// To exceed requirements I added time of journal entry
+
 using System;
 using System.Collections.Generic;
 using System.IO;
