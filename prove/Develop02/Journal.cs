@@ -39,18 +39,26 @@ public class Journal
     {
         _entries.Clear();
 
-        string[] lines = File.ReadAllLines(file);
-
-        for(int i = 0; i < lines.Length; i++)
+        try
         {
-            string[] parts = lines[i].Split('~');
-            DateTime date = DateTime.Parse(parts[0].Trim());
-            string promptText = parts[1].Trim();
-            string entryText = parts[2].Trim();
+            string[] lines = File.ReadAllLines(file);
 
-            Entry entry = new Entry(promptText, entryText);
-            entry._date = date;
-            _entries.Add(entry);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split('~');
+                DateTime date = DateTime.Parse(parts[0].Trim());
+                string promptText = parts[1].Trim();
+                string entryText = parts[2].Trim();
+
+                Entry entry = new Entry(promptText, entryText);
+                entry._date = date;
+                _entries.Add(entry);
+            }
         }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("File not found.");
+        }
+                
     }   
 }
