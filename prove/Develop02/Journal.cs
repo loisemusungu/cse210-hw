@@ -43,21 +43,26 @@ public class Journal
         {
             string[] lines = File.ReadAllLines(file);
 
-            for (int i = 0; i < lines.Length; i++)
+            for (int i = 0; i < lines.Length; i += 4)  
             {
-                string[] parts = lines[i].Split('~');
-                DateTime date = DateTime.Parse(parts[0].Trim());
-                string promptText = parts[1].Trim();
-                string entryText = parts[2].Trim();
+                if (i + 2 < lines.Length)
+                {
+                    DateTime date = DateTime.Parse(lines[i]);
+                    string prompt = lines[i + 1];
+                    string response = lines[i + 2];
 
-                Entry entry = new Entry(promptText, entryText);
-                entry._date = date;
-                _entries.Add(entry);
+                    Entry entry = new Entry(prompt, response)
+                    {
+                        _date = date  
+                    };
+
+                    _entries.Add(entry);  
+                }
             }
         }
-        catch (FileNotFoundException)
+        catch (Exception ex)
         {
-            Console.WriteLine("File not found.");
+            Console.WriteLine($"Error loading journal: {ex.Message}");
         }
                 
     }   
