@@ -25,4 +25,27 @@ public class Fraction
         _denominator = denominator;
         _divider = divider;
     }
+
+    public string GetFractionString()
+    {
+        return _numerator + _divider + _denominator;
+    }
+
+    public void SetFractionString(int numerator, string divider, int denominator)
+    {
+        _numerator = numerator;
+        _denominator = denominator;
+        _divider = divider;
+    }
+
+    public double GetDecimalValue()
+    {
+        return (double)_numerator / _denominator;
+    }
+
+    public void SetDecimalValue(double value)
+    {
+        _numerator = (int)(value * 100);
+        _denominator = 100;
+    }
 }
