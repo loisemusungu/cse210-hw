@@ -1,3 +1,4 @@
+using System;
 public class Fraction
 {
     private int _numerator;
@@ -28,7 +29,8 @@ public class Fraction
 
     public string GetFractionString()
     {
-        return _numerator + _divider + _denominator;
+        string text = _numerator + _divider + _denominator;
+        return text;
     }
 
     public void SetFractionString(int numerator, string divider, int denominator)
