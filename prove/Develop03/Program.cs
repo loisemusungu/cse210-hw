@@ -4,7 +4,7 @@ CSE 210
 
 To exceed requirements, I have added a scripture library to allow 
 this program to randomly select scripture for the user to memorize 
-and I have modifoed the HideRandomWords function in scripture
+and I have modified the HideRandomWords function in scripture
 class to allow the program to select words to hide from the ones that 
 have not been hidden 
 */
