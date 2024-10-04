@@ -21,12 +21,27 @@ class Scripture
     public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
-        for (int i = 0; i < numberToHide; i++)
+    int wordsHidden = 0;
+    
+    while (wordsHidden < numberToHide)
+    {
+        // Find a random index
+        int index = random.Next(_words.Count);
+        
+        // Only hide the word if it's not already hidden
+        if (!_words[index].IsHidden())
         {
-            int index = random.Next(_words.Count);
             _words[index].Hide();
+            wordsHidden++; // Count how many words we've hidden
+        }
+
+        // If all words are hidden, we should stop trying to hide more
+        if (IsCompletelyHidden())
+        {
+            break;
         }
     }
+}
 
     public string GetDisplayText()
     {
