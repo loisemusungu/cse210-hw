@@ -31,12 +31,11 @@ class Program
 
         while (true) // Loop through the entire program
         {
-            // Step 2: Pick a random scripture from the library
             Scripture selectedScripture = scriptureLibrary[random.Next(scriptureLibrary.Count)];
 
             while (!selectedScripture.IsCompletelyHidden())
             {
-                Console.Clear(); // Step 3: Clear the console
+                Console.Clear(); // Clear the console
                 Console.WriteLine(selectedScripture.GetFullDisplayText()); // Show the scripture (reference + text)
                 Console.WriteLine("\nPress Enter to continue or type 'quit' to exit.");
 
