@@ -1,7 +1,5 @@
 using System;
 
-// _text: string;
-// _isHidden: bool;
 class Word
 {
     private string _text;
@@ -30,14 +28,7 @@ class Word
 
     public string GetDisplayText()
     {
-        if (_isHidden)
-        {
-            return "______";
-        }
-        else
-        {
-            return _text;
-        }
+        return _isHidden ? "_____" : _text;
     }
 }
 

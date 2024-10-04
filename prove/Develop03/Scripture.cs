@@ -35,7 +35,12 @@ class Scripture
         {
             displayText += word.GetDisplayText() + " ";
         }
-        return displayText;
+        return displayText.Trim();
+    }
+
+    public string GetFullDisplayText()
+    {
+        return _reference.GetDisplayText() + " " + GetDisplayText();
     }
 
     public bool IsCompletelyHidden()
@@ -50,14 +55,3 @@ class Scripture
         return true;
     }
 }
-
-/* _reference: Reference;
-_words: List<Word>;
-
-Scripture(Reference : Reference, Text : string);
-
-HideRandomWords(numberToHide : int): void;
-
-GetDisplayText(): string;
-
-IsCompletelyHidden(): bool; */

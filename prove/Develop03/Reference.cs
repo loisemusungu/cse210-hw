@@ -1,10 +1,5 @@
 using System;
 
-// _book: string;
-// _chapter: int;
-// _verse: int;
-// _endVerse: int;
-
 class Reference
 {
     private string _book;
@@ -39,10 +34,5 @@ class Reference
             return $"{_book} {_chapter}:{_verse}-{_endVerse}";
         }
     }
+    
 }
-
-// Reference(book : string, chapter : int, verse : int);
-
-// Reference(book : string, chapter : int, verse : int, endVerse : int);
-
-// GetDisplayText(): string;
