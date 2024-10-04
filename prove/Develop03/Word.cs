@@ -1,7 +1,7 @@
 using System;
 
-_text: string;
-_isHidden: bool;
+// _text: string;
+// _isHidden: bool;
 class Word
 {
     private string _text;
