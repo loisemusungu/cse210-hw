@@ -9,7 +9,6 @@ class Program
         Scripture scripture = new Scripture(reference, "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.");  
         scripture.HideRandomWords(3);
         Console.WriteLine(scripture.GetDisplayText());
-        Console.WriteLine(scripture.IsCompletelyHidden());
-        
+
     }
 }
