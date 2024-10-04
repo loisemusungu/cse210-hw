@@ -21,7 +21,7 @@ class Scripture
     public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
-    int wordsHidden = 0;
+        int wordsHidden = 0;
     
     while (wordsHidden < numberToHide)
     {
