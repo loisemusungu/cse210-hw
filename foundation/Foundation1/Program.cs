@@ -21,9 +21,12 @@ class Program
         video3._length = 240;
 
         video1.AddComment(new Comment { _name = "Becky Smith", _text = "Great video!" });
+        video1.AddComment(new Comment { _name = "Carol Brunnet", _text = "I love this video!" });
         
         // Adding comments to video2
         video2.AddComment(new Comment { _name = "John Doe", _text = "I love this video!" });
+        video2.AddComment(new Comment { _name = "Sarah Hassan", _text = "Keep up!" });
+        video2.AddComment(new Comment { _name = "Becky Book", _text = "Anyone here from TikTok?" });
         
         // Adding comments to video3
         video3.AddComment(new Comment { _name = "Jane Here", _text = "I learned a lot!" });
