@@ -10,8 +10,8 @@ public class Video
     
     public void Display()
     {
-        Console.WriteLine($"{_title} ({_length} mins)");
+        Console.WriteLine($"{_title} ({_length} seconds)");
         Console.WriteLine("Comments: " + _comments);
-          
+
     }
 }
