@@ -10,8 +10,8 @@ public class Comment
 
     public void Display()
     {
-        Console.WriteLine($"{_name}: {_text}");
-        Console.WriteLine("Comments:");
+        Console.WriteLine($"Comments: \n {_name}: {_text} \n");
+        
 
         // Display each comment
         foreach (Comment comment in _comments)

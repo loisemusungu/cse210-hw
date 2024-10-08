@@ -14,7 +14,7 @@ public class Video
 
         for (int i = 0; i < _comments; i++)
         {
-            Console.WriteLine("Comment " + (i + 1));
+            Console.WriteLine("Comment: " + (i + 1));
         }
 
     }
