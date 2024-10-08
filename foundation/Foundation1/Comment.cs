@@ -8,7 +8,7 @@ public class Comment
 
     public void Display()
     {
-        Console.WriteLine($"Comments: \n {_name}: {_text} \n");
+        Console.WriteLine($"{_name}: {_text} \n");
         
     }
 }
