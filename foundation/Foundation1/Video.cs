@@ -11,7 +11,11 @@ public class Video
     public void Display()
     {
         Console.WriteLine($"{_title} ({_length} seconds)");
-        Console.WriteLine("Comments: " + _comments);
+
+        for (int i = 0; i < _comments; i++)
+        {
+            Console.WriteLine("Comment " + (i + 1));
+        }
 
     }
 }
