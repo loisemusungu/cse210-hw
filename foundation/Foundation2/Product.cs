@@ -17,7 +17,7 @@ class Product
     public Product(string name, int productId, decimal price, int quantity)
     {
         _name = name;
-        _productId = new Random().Next(1000, 9999);
+        _productId = productId;
         _price = price;
         _quantity = quantity;
     }
