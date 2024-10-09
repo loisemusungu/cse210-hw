@@ -7,14 +7,14 @@ using System.Collections.Generic;
     price per unit was $3 and they bought 5 units, the total cost would be $15)
 */
 
-class products
+class Product
 {
     private string _name;
     private int _productId;
     private decimal _price;
     private int _quantity;
 
-    public products(string name, int productId, decimal price, int quantity)
+    public Product(string name, int productId, decimal price, int quantity)
     {
         _name = name;
         _productId = productId;
