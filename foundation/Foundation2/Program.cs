@@ -14,6 +14,10 @@ class Program
         order2.AddProduct(new Product("Milk", 6201, 2.50m, 2));
         order2.AddProduct(new Product("Bread", 3256, 1.50m, 3));
 
+        Order order3 = new Order(new Customer("Mercy Holmes", new Address("Tom Mboya St", "Nairobi", "Nairobi", "Kenya")));
+        order3.AddProduct(new Product("Milk", 6201, 2.50m, 2));
+        order3.AddProduct(new Product("Bread", 3256, 1.50m, 3));
+
 
         // Step 2: Display the packing label and total cost for each order
         Console.WriteLine("Order 1 Packing Label:");
@@ -27,5 +31,11 @@ class Program
         Console.WriteLine("Shipping Label:");
         Console.WriteLine(order2.GetShippingLabel());
         Console.WriteLine($"Total Cost: {order2.CalculateTotalCost():C}");
+
+        Console.WriteLine("\nOrder 3 Packing Label:");
+        Console.WriteLine(order3.GetPackingLabel());
+        Console.WriteLine("Shipping Label:");
+        Console.WriteLine(order3.GetShippingLabel());
+        Console.WriteLine($"Total Cost: {order3.CalculateTotalCost():C}");
     }
 }
