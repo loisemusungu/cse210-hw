@@ -18,10 +18,14 @@ class Program
         // Step 2: Display the packing label and total cost for each order
         Console.WriteLine("Order 1 Packing Label:");
         Console.WriteLine(order1.GetPackingLabel());
+        Console.WriteLine("Shipping Label:");
+        Console.WriteLine(order1.GetShippingLabel());
         Console.WriteLine($"Total Cost: {order1.CalculateTotalCost():C}");
 
         Console.WriteLine("\nOrder 2 Packing Label:");
         Console.WriteLine(order2.GetPackingLabel());
+        Console.WriteLine("Shipping Label:");
+        Console.WriteLine(order2.GetShippingLabel());
         Console.WriteLine($"Total Cost: {order2.CalculateTotalCost():C}");
     }
 }
