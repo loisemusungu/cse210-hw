@@ -27,6 +27,6 @@ public class Math : Assignment
 
     public string GetHomeworkList()
     {
-        return $"{_studentName} is working on {_topic} in section {_textbookSection} and has to do problems {_problems}";
+        return $"{_studentName} - {_topic} in section {_textbookSection} and has to do problems {_problems}";
     }
 }
