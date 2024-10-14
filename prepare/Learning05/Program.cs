@@ -9,7 +9,7 @@ class Program
         assignment1.SetTopic("European History");
 
         Writing writing1 = new Writing();
-        writing1.SetTopic("The Causes of World War II");
+        writing1.SetTitle("The Causes of World War II");
         writing1.SetStudentName("Mary Waters");
 
         Console.WriteLine(assignment1.GetSummary());
