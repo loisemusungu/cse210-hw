@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning05 World!");
+        Assignment assignment1 = new Assignment();
+        assignment1.SetStudentName("John");
+        assignment1.SetTopic("C#");
+        
+        Console.WriteLine(assignment1.GetSummary());
     }
 }
