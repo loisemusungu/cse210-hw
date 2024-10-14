@@ -24,4 +24,9 @@ public class Math : Assignment
     {
         _problems = problems;
     }
+
+    public string GetHomeworkList()
+    {
+        return $"{_studentName} is working on {_topic} in section {_textbookSection} and has to do problems {_problems}";
+    }
 }
