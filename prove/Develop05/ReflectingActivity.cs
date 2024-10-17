@@ -88,7 +88,6 @@ public class ReflectingActivity : Activity
         
         while (DateTime.Now < endTime)
         {
-            question = GetRandomQuestions();
             Console.WriteLine(question);
             ShowCountDown();
             if (DateTime.Now >= endTime) break;
