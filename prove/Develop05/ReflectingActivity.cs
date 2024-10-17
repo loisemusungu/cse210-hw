@@ -7,7 +7,7 @@ public class ReflectingActivity : Activity
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
-        "Reflect on a time when you felt overwhelmed. How did you cope with the situation?",
+        "Reflect on a time when you felt overwhelmed.",
         "Think of a time when you helped someone in need.",
         "Think of a time when you helped someone else.",
         "Think about something you have learned about yourself recently.",
