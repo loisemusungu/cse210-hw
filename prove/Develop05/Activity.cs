@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 public class Activity
 {
@@ -39,14 +40,18 @@ public class Activity
     public Activity()
     {}
 
-    public string DisplayStartingMessage()
+    public void DisplayStartingMessage()
     {
-        return $"Welcome to the {_name}.\n {_description}.\n How long, in seconds, would you like for your session?";
-    }
+    Console.Write($"\nWelcome to the {_name}.\n\n{_description}.\n\nHow long, in seconds, would you like for your session (choose in multiples of 10)? ");
+    string duration = Console.ReadLine();
+    SetDuration(Convert.ToInt32(duration));
+    Console.Clear();
+    Console.WriteLine("Get ready...");
+    }       
 
     public string DisplayEndingMessage()
     {
-        return $"Thank you for using the {_name}. We hope you enjoyed your {_duration} seconds of {_description}.";
+        return $"Well Done!\n\nThank you for using the {_name}. \n\nWe hope you enjoyed your {_duration} seconds of {_description}";
     }
 
     public void ShowSpinner()
@@ -56,7 +61,7 @@ public class Activity
         foreach (string s in spinner)
         {
             Console.Write(s);
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
             Console.Write("\b \b");
         }
 
@@ -82,14 +87,13 @@ public class Activity
 
     public void ShowCountDown()
     {
-        for (int i = _duration ; i > 0; i--)
+        List<string> countDown = new List<string> { "5", "4", "3", "2", "1" };
+        foreach (string i in countDown)
         {
-            Console.WriteLine(i);
+            Console.Write(i);
             Thread.Sleep(1000);
+            Console.Write("\b \b");
         }
-        if (_duration < 1)
-        {
-            Console.WriteLine("Well Done!");
-        }
+        
     }
 }
