@@ -67,7 +67,7 @@ public class ReflectingActivity : Activity
 
     public void DisplayPrompt(string prompt)
     {
-        Console.WriteLine("\n\nConsider the following prompt: \n\n");
+        Console.WriteLine("\n\nConsider the following prompt:");
         Console.WriteLine(prompt);
 
         // I want the user to press enter when they are ready to see the questions
@@ -86,6 +86,7 @@ public class ReflectingActivity : Activity
         int duration = GetDuration();
         DateTime endTime = DateTime.Now.AddSeconds(duration); 
         
+        Random random = new Random();
         while (DateTime.Now < endTime)
         {
             Console.WriteLine(question);
