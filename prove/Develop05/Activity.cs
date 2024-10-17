@@ -4,7 +4,7 @@ public class Activity
 {
     protected string _name = "";
     protected string _description = "";
-    protected int _duration = 0;
+    protected int _duration = 5;
 
     public string GetName()
     {
@@ -84,9 +84,10 @@ public class Activity
     {
         for (int i = _duration ; i > 0; i--)
         {
+            Console.WriteLine(i);
             Thread.Sleep(1000);
         }
-        if (_duration > 0)
+        if (_duration < 1)
         {
             Console.WriteLine("Well Done!");
         }
