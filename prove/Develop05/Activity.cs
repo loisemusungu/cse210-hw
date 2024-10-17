@@ -86,5 +86,9 @@ public class Activity
         {
             Thread.Sleep(1000);
         }
+        if (_duration > 0)
+        {
+            Console.WriteLine("Well Done!");
+        }
     }
 }
