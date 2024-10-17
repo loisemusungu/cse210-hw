@@ -36,7 +36,7 @@ public class Activity
         _duration = duration;
     }
 
-    Activity()
+    public Activity()
     {}
 
     public string DisplayStartingMessage()
@@ -51,7 +51,7 @@ public class Activity
 
     public void ShowSpinner()
     {
-        List<string> spinner = new List<string> { "[", "_", "]", "-" };
+        List<string> spinner = new List<string> { "-", "\\", "|", "/", "|" };
 
         foreach (string s in spinner)
         {
@@ -60,8 +60,31 @@ public class Activity
             Console.Write("\b \b");
         }
 
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(6);
+
+        int i = 0;
+        while (DateTime.Now < endTime)
+        {
+            string s = spinner[i];
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+            i++;
+
+            if (i >= spinner.Count)
+            {
+                i = 0;
+            }
+        }
+
     }
 
     public void ShowCountDown()
-    {}
+    {
+        for (int i = _duration ; i > 0; i--)
+        {
+            Thread.Sleep(1000);
+        }
+    }
 }
