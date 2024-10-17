@@ -10,7 +10,7 @@ class Program
         Console.WriteLine("3. Start Listing Activity");
         Console.WriteLine("4. QUIT");
 
-        Console.WriteLine("Enter your selection: ");
+        Console.Write("Enter your selection: ");
         string selection = Console.ReadLine();
 
         if (selection == "1")
