@@ -9,8 +9,12 @@ class Program
 
         while (selection != "4")
         {
-            
-            Console.WriteLine("Menu Options");
+            //Console.Clear();
+
+            //ShowCountDown();
+
+            Console.WriteLine("\n\nWelcome to the Mindfulness App");
+            Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Start Breathing Activity");
             Console.WriteLine("2. Start Reflecting Activity");
             Console.WriteLine("3. Start Listing Activity");
@@ -44,4 +48,5 @@ class Program
             }
         }
     }
+    
 }
