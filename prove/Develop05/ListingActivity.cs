@@ -6,7 +6,7 @@ public class ListingActivity
     private int _count = 0;
     private List<string> _prompts;
 
-    ListingActivity()
+    public ListingActivity()
     {}
 
     public void run()
