@@ -56,7 +56,7 @@ public class Activity
 
     public void ShowSpinner()
     {
-        List<string> spinner = new List<string> { "-", "\\", "|", "/", "|" };
+        List<string> spinner = new List<string> { "-", "\\", "|", "/", "|", "\\" };
 
         foreach (string s in spinner)
         {
