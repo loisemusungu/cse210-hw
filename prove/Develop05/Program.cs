@@ -7,7 +7,7 @@ class Program
     {   
         string selection ="";
 
-        while (selection != "4")
+        while (selection != "5")
         {
             //Console.Clear();
 
@@ -18,7 +18,8 @@ class Program
             Console.WriteLine("1. Start Breathing Activity");
             Console.WriteLine("2. Start Reflecting Activity");
             Console.WriteLine("3. Start Listing Activity");
-            Console.WriteLine("4. QUIT");
+            Console.WriteLine("4. Start Journaling Activity");
+            Console.WriteLine("5. QUIT");
 
             Console.Write("Enter your selection: ");
             selection = Console.ReadLine();
@@ -39,6 +40,11 @@ class Program
                 listingActivity.run();
             }
             else if (selection == "4")
+            {
+                JournalActivity journalActivity = new JournalActivity();
+                journalActivity.run();
+            }
+            else if (selection == "5")
             {
                 Console.WriteLine("Goodbye!");
             }
