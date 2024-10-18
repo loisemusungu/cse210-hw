@@ -31,9 +31,9 @@ public class ListingActivity : Activity
         ShowCountDown();  // Countdown before starting to think about the prompt
 
         // Start accepting input from user and count items listed
-        int itemsListed = GetListFromUser();
+        int _count = GetListFromUser();
 
-        Console.WriteLine($"You listed {itemsListed} items.");
+        Console.WriteLine($"You listed {_count} items.");
 
         Console.WriteLine("This activity is now complete.");
         ShowSpinner();
