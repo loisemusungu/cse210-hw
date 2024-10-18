@@ -66,7 +66,7 @@ public class Activity
         }
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(5);
+        DateTime endTime = startTime.AddSeconds(0);
 
         int i = 0;
         while (DateTime.Now < endTime)
