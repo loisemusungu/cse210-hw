@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel.Design;
-
+// Loise Musungu
+// Unit Inheritance
+// To exceed requirement I have added the Journaling activity.
 class Program
 {
     static void Main(string[] args)
