@@ -81,17 +81,21 @@ public class ReflectingActivity : Activity
         Console.WriteLine("Here are some questions to help you reflect on your experience: \n\n");
         Console.Write("You may begin in: \n\n"); 
         ShowCountDown();
-        Console.WriteLine(question);
 
         int duration = GetDuration();
         DateTime endTime = DateTime.Now.AddSeconds(duration); 
         
         Random random = new Random();
+
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine(question);
-            ShowCountDown();
-            if (DateTime.Now >= endTime) break;
+            // Display a random question
+            string randomQuestion = GetRandomQuestions();
+            Console.WriteLine(randomQuestion);
+
+            // Wait for a few seconds before showing the next question
+            System.Threading.Thread.Sleep(5000);  // Show each question after 5 seconds
+            ShowSpinner(); // Optionally show a spinner for the 5 seconds
         }
 
         Console.WriteLine("This activity is now complete.");
