@@ -2,7 +2,7 @@ using System;
 
 // This is the base class for calculating ares for all shapes
 
-public class shapes
+public class Shape
 {
     protected string _color;
 
