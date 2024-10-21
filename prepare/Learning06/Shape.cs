@@ -6,9 +6,9 @@ public class Shape
 {
     protected string _color;
 
-    public shapes()
-        {
-        }
+    public Shape()
+    {
+    }
 
     public string GetColor()
     {
