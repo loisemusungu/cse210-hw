@@ -1,10 +1,5 @@
 EternalGoal
-Eternal Goal
-This is an eternal goal that you can use to test the goal system.
-0
-false
-SimpleGoal
-9
-8
+Study the scriptures
+Study for 10 minutes
 50
 false
