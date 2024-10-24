@@ -107,13 +107,20 @@ public class GoalManager
                 writer.WriteLine(goal.GetShortName());
                 writer.WriteLine(goal.GetDescription());
                 writer.WriteLine(goal.GetPoints());
+                writer.WriteLine(goal.IsComplete() ? "true" : "false"); // Save completion status
             }
         }
+        Console.WriteLine("Goals saved successfully.");
     }
 
     public void LoadGoals()
     {
-        _goals.Clear();
+        if (!File.Exists("goals.txt"))
+        {
+            Console.WriteLine("No saved goals found.");
+            return;
+        }
+
         using (StreamReader reader = new StreamReader("goals.txt"))
         {
             while (!reader.EndOfStream)
@@ -142,9 +149,10 @@ public class GoalManager
                     goal.SetShortName(shortName);
                     goal.SetDescription(description);
                     goal.SetPoints(points);
-                    _goals.Add(goal);
+                    _goals.Add(goal); // Add to the existing list
                 }
             }
         }
+        Console.WriteLine("Goals have been loaded and added to the existing list.");
     }
 }
