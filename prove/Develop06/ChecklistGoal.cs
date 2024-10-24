@@ -1,5 +1,3 @@
-using System;
-
 public class ChecklistGoal : Goal
 {
     private int _bonus;
@@ -21,7 +19,7 @@ public class ChecklistGoal : Goal
             if (int.TryParse(Console.ReadLine(), out points))
             {
                 SetPoints(points);
-                break; // Exit the loop if parsing is successful
+                break;
             }
             else
             {
@@ -38,26 +36,6 @@ public class ChecklistGoal : Goal
         _timesAccomplished = 0; // Start with 0 accomplishments
     }
 
-    public int GetBonus()
-    {
-        return _bonus;
-    }
-
-    public void SetBonus(int bonus)
-    {
-        _bonus = bonus;
-    }
-
-    public int GetTimesAccomplished()
-    {
-        return _timesAccomplished;
-    }
-
-    public void SetTimesAccomplished(int timesAccomplished)
-    {
-        _timesAccomplished = timesAccomplished;
-    }
-
     public override void RecordEvent(GoalManager goalManager)
     {
         _timesAccomplished++;
@@ -68,7 +46,7 @@ public class ChecklistGoal : Goal
         }
         else if (_timesAccomplished == _requiredCompletions)
         {
-            goalManager.AddPoints(_points + _bonus); // Add points plus bonus
+            goalManager.AddPoints(_points + _bonus);
             Console.WriteLine($"Event recorded for {GetShortName()}. You completed the goal and earned {_points} points and a bonus of {_bonus} points!");
         }
         else
@@ -84,6 +62,7 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
+        // Adding the progress to the string representation
         return $"{(IsComplete() ? "[x]" : "[ ]")} {GetShortName()} ({GetDescription()}) -- Currently: {_timesAccomplished}/{_requiredCompletions}";
     }
 }
