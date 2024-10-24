@@ -5,6 +5,7 @@ public abstract class Goal
     protected string _shortName = "";
     protected string _description = "";
     protected int _points = 0;
+    protected bool _isComplete = false;
 
     public string GetShortName()
     {
@@ -41,7 +42,15 @@ public abstract class Goal
 
     public abstract void  RecordEvent(GoalManager goalManager);
 
-    public abstract bool IsComplete();
+    public bool IsComplete()
+    {
+        return _isComplete;
+    }
+
+    public void MarkComplete()
+    {
+        _isComplete = true; // Add a method to mark the goal as complete
+    }
 
     public virtual void GetDetailsString()
     {}

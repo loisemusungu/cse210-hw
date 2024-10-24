@@ -20,9 +20,17 @@ public class GoalManager
 
     public void ListGoalNames()
     {
-        foreach (Goal goal in _goals)
+        if (_goals.Count == 0)
         {
-            Console.WriteLine(goal.GetShortName());
+            Console.WriteLine("No goals have been created yet.");
+            return;
+        }
+
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            // Display checkbox based on completion status
+            string checkbox = _goals[i].IsComplete() ? "[x]" : "[ ]";
+            Console.WriteLine($"{i + 1}. {checkbox} {_goals[i].GetShortName()} ({_goals[i].GetDescription()})");
         }
     }
 
@@ -68,7 +76,7 @@ public class GoalManager
 
         if (goalSelection >= 0 && goalSelection < _goals.Count)
         {
-            _goals[goalSelection].RecordEvent(); // Call without parameters
+            _goals[goalSelection].RecordEvent(this); // Pass the current GoalManager instance
             AddPoints(_goals[goalSelection].GetPoints()); // Add points here
         }
         else

@@ -1,0 +1,4 @@
+SimpleGoal
+To learn how to code
+To enroll in codecademy
+100
