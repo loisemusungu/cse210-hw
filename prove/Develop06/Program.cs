@@ -22,29 +22,33 @@ class Program
             Console.Write("Enter your selection: ");
             selection = Console.ReadLine();
 
-            switch (selection)
+            if (selection == "1")
             {
-                case "1":
-                    goalManager.CreateGoal();
-                    break;
-                case "2":
-                    goalManager.ListGoalNames();
-                    break;
-                case "3":
-                    goalManager.SaveGoals();
-                    break;
-                case "4":
-                    goalManager.LoadGoals();
-                    break;
-                case "5":
-                    goalManager.RecordEvent();
-                    break;
-                case "6":
-                    Console.WriteLine("Goodbye!");
-                    break;
-                default:
-                    Console.WriteLine("Invalid selection. Please try again.");
-                    break;
+                goalManager.CreateGoal();
+            }
+            else if (selection == "2")
+            {
+                goalManager.ListGoalNames();
+            }
+            else if (selection == "3")
+            {
+                goalManager.SaveGoals();
+            }
+            else if (selection == "4")
+            {
+                goalManager.LoadGoals();
+            }
+            else if (selection == "5")
+            {
+                goalManager.RecordEvent();
+            }
+            else if (selection == "6")
+            {
+                Console.WriteLine("Goodbye!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid selection. Please try again.");
             }
         }
     }

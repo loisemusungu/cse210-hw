@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GoalManager
 {
-    public List<Goal>_goals;
+    public List<Goal> _goals;
     public int _score = 0;
 
     public GoalManager()
@@ -13,9 +13,6 @@ public class GoalManager
         _score = 0;
     }
     
-    public void Start()
-    {}
-
     public void DisplayPlayerInfo()
     {
         Console.WriteLine("Player Score: " + _score);
@@ -26,16 +23,6 @@ public class GoalManager
         foreach (Goal goal in _goals)
         {
             Console.WriteLine(goal.GetShortName());
-        }
-    }
-
-    public void ListGoalDetails()
-    {
-        foreach (Goal goal in _goals)
-        {
-            Console.WriteLine(goal.GetShortName());
-            Console.WriteLine(goal.GetDescription());
-            Console.WriteLine(goal.GetPoints());
         }
     }
 
@@ -72,7 +59,7 @@ public class GoalManager
     public void RecordEvent()
     {
         Console.WriteLine("Which goal would you like to record an event for?");
-            for (int i = 0; i < _goals.Count; i++)
+        for (int i = 0; i < _goals.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {_goals[i].GetShortName()}");
         }
@@ -82,6 +69,8 @@ public class GoalManager
         if (goalSelection >= 0 && goalSelection < _goals.Count)
         {
             _goals[goalSelection].RecordEvent();
+            // Add points logic
+            AddPoints(_goals[goalSelection].GetPoints());
         }
         else
         {
@@ -92,7 +81,9 @@ public class GoalManager
     public void AddPoints(int points)
     {
         _score += points;
+        Console.WriteLine($"You now have {_score} points.");
     }
+
     public void SaveGoals()
     {
         using (StreamWriter writer = new StreamWriter("goals.txt"))
@@ -100,11 +91,11 @@ public class GoalManager
             foreach (Goal goal in _goals)
             {
                 if (goal is SimpleGoal)
-                writer.WriteLine("SimpleGoal");
+                    writer.WriteLine("SimpleGoal");
                 else if (goal is EternalGoal)
-                writer.WriteLine("EternalGoal");
+                    writer.WriteLine("EternalGoal");
                 else if (goal is ChecklistGoal)
-                writer.WriteLine("ChecklistGoal");
+                    writer.WriteLine("ChecklistGoal");
 
                 writer.WriteLine(goal.GetShortName());
                 writer.WriteLine(goal.GetDescription());
@@ -121,13 +112,10 @@ public class GoalManager
             while (!reader.EndOfStream)
             {
                 string goalType = reader.ReadLine();
-
-                // Read the common properties of the goal
                 string shortName = reader.ReadLine();
                 string description = reader.ReadLine();
                 int points = Convert.ToInt32(reader.ReadLine());
 
-                // Create the corresponding goal based on the type and set properties
                 Goal goal = null;
                 if (goalType == "SimpleGoal")
                 {
@@ -147,7 +135,7 @@ public class GoalManager
                     goal.SetShortName(shortName);
                     goal.SetDescription(description);
                     goal.SetPoints(points);
-                    _goals.Add(goal); // Add the loaded goal to the list
+                    _goals.Add(goal);
                 }
             }
         }
