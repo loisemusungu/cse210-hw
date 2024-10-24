@@ -1,4 +1,4 @@
 SimpleGoal
-To learn how to code
-To enroll in codecademy
+Sign up for coding classes
+Start to learn how to code
 100
