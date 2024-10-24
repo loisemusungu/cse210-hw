@@ -9,7 +9,7 @@ class Program
 
         while (selection != "6")
         {
-            Console.WriteLine("\n\nWelcome to the Ternal Quest Demo App");
+            Console.WriteLine("You have 0 points.");
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create a new Goal");
@@ -31,7 +31,7 @@ class Program
                 Console.Write("Enter your selection: ");
                 string goalSelection = Console.ReadLine();
 
-                if (goalSelection == "1")
+                if (goalSelection == "1" )
                 {
                     SimpleGoal simpleGoal = new SimpleGoal();
                 }
