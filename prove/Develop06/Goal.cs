@@ -42,10 +42,7 @@ public abstract class Goal
 
     public abstract void  RecordEvent(GoalManager goalManager);
 
-    public bool IsComplete()
-    {
-        return _isComplete;
-    }
+    public abstract bool IsComplete();
 
     public void MarkComplete()
     {
