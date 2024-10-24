@@ -25,6 +25,8 @@ public class ChecklistGoal : Goal
        
     }
 
-    public override void GetStringRepresentation()
-    {}
+    public override string GetStringRepresentation()
+    {
+        return $"{GetShortName()} - {GetDescription()} ({GetPoints()} points)";
+    }
 }
