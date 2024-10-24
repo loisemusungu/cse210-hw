@@ -5,11 +5,11 @@ class Program
     static void Main(string[] args)
     {
         GoalManager goalManager = new GoalManager();
-        string selection ="";
+        string selection = "";
 
         while (selection != "6")
         {
-            Console.WriteLine("You have 0 points.");
+            goalManager.DisplayPlayerInfo();
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create a new Goal");
@@ -22,56 +22,29 @@ class Program
             Console.Write("Enter your selection: ");
             selection = Console.ReadLine();
 
-            if (selection == "1")
+            switch (selection)
             {
-                Console.WriteLine("What type of goal would you like to create?");
-                Console.WriteLine("1. Simple Goal");
-                Console.WriteLine("2. Eternal Goal");
-                Console.WriteLine("3. Checklist Goal");
-                Console.Write("Enter your selection: ");
-                string goalSelection = Console.ReadLine();
-
-                if (goalSelection == "1" )
-                {
-                    SimpleGoal simpleGoal = new SimpleGoal();
-                }
-                else if (goalSelection == "2")
-                {
-                    EternalGoal eternalGoal = new EternalGoal();
-                }
-                else if (goalSelection == "3")
-                {
-                    ChecklistGoal checklistGoal = new ChecklistGoal();
-                }
-                else
-                {
+                case "1":
+                    goalManager.CreateGoal();
+                    break;
+                case "2":
+                    goalManager.ListGoalNames();
+                    break;
+                case "3":
+                    goalManager.SaveGoals();
+                    break;
+                case "4":
+                    goalManager.LoadGoals();
+                    break;
+                case "5":
+                    goalManager.RecordEvent();
+                    break;
+                case "6":
+                    Console.WriteLine("Goodbye!");
+                    break;
+                default:
                     Console.WriteLine("Invalid selection. Please try again.");
-                }
-            }
-            else if (selection == "2")
-            {
-                goalManager.ListGoalNames();
-            }
-            else if (selection == "3")
-            {
-                goalManager.SaveGoals();
-            }
-            else if (selection == "4")
-            {
-                goalManager.LoadGoals();
-    
-            }
-            else if (selection == "5")
-            {
-                goalManager.RecordEvent();
-            }
-            else if (selection == "6")
-            {
-                Console.WriteLine("Goodbye!");
-            }
-            else
-            {
-                Console.WriteLine("Invalid selection. Please try again.");
+                    break;
             }
         }
     }
