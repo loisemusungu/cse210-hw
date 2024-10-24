@@ -89,6 +89,10 @@ public class GoalManager
         }
     }
 
+    public void AddPoints(int points)
+    {
+        _score += points;
+    }
     public void SaveGoals()
     {
         using (StreamWriter writer = new StreamWriter("goals.txt"))

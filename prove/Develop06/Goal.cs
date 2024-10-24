@@ -37,10 +37,9 @@ public abstract class Goal
     }
 
     public Goal()
-    {
-    }
+    {}
 
-    public abstract void  RecordEvent();
+    public abstract void  RecordEvent(GoalManager goalManager);
 
     public abstract bool IsComplete();
 

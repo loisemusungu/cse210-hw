@@ -9,8 +9,11 @@ public class EternalGoal : Goal
         SetPoints(0);
     }
     
-    public override void RecordEvent()
-    {}
+    public override void RecordEvent(GoalManager goalManager)
+    {
+        goalManager.AddPoints(_points);
+        Console.WriteLine($"Event recorded for {GetShortName()}. You earned {_points} points.");
+    }
 
     public override bool IsComplete()
     {
