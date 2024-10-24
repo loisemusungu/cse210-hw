@@ -68,9 +68,8 @@ public class GoalManager
 
         if (goalSelection >= 0 && goalSelection < _goals.Count)
         {
-            _goals[goalSelection].RecordEvent();
-            // Add points logic
-            AddPoints(_goals[goalSelection].GetPoints());
+            _goals[goalSelection].RecordEvent(); // Call without parameters
+            AddPoints(_goals[goalSelection].GetPoints()); // Add points here
         }
         else
         {

@@ -46,5 +46,5 @@ public abstract class Goal
     public virtual void GetDetailsString()
     {}
 
-    public abstract void GetStringRepresentation();
+    public abstract string GetStringRepresentation();
 }

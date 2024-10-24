@@ -2,29 +2,36 @@ using System;
 
 public class SimpleGoal : Goal
 {
-    public SimpleGoal(GoalManager goalManager)
+    public SimpleGoal()
     {
         Console.Write("What is the name of your goal? ");
-        SetShortName (Console.ReadLine());
+        SetShortName(Console.ReadLine());
+        
         Console.Write("What is the description of your goal? ");
-        SetDescription (Console.ReadLine());
-        Console.Write("How many points is your goal worth? ");
-        SetPoints(Convert.ToInt32(Console.ReadLine()));
+        SetDescription(Console.ReadLine());
+        
+        int points;
+        while (true)
+        {
+            Console.Write("How many points is your goal worth? ");
+            if (int.TryParse(Console.ReadLine(), out points))
+            {
+                SetPoints(points);
+                break; // Exit the loop if parsing is successful
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer for points.");
+            }
+        }
     }
     
     public override void RecordEvent(GoalManager goalManager)
     {
-        goalManager.AddPoints(_points);
-        Console.WriteLine($"Event recorded for {GetShortName()}. You earned {_points} points.");
+        Console.WriteLine($"Event recorded for goal: {GetShortName()}");
     }
 
-    public override bool IsComplete()
-    {
-        return false;
-    }
+    public override bool IsComplete() => false; // Implement your completion logic
 
-    public override void GetStringRepresentation()
-    {
-        
-    }
+    public override string GetStringRepresentation() => $"{GetShortName()} - {GetDescription()} ({GetPoints()} points)";
 }
