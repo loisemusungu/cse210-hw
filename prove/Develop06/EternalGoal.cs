@@ -4,9 +4,26 @@ public class EternalGoal : Goal
 {
     public EternalGoal()
     {
-        SetShortName("Eternal Goal");
-        SetDescription("This is an eternal goal that you can use to test the goal system.");
-        SetPoints(0);
+        Console.Write("What is the name of your goal? ");
+        SetShortName(Console.ReadLine());
+        
+        Console.Write("What is the description of your goal? ");
+        SetDescription(Console.ReadLine());
+        
+        int points;
+        while (true)
+        {
+            Console.Write("How many points is your goal worth? ");
+            if (int.TryParse(Console.ReadLine(), out points))
+            {
+                SetPoints(points);
+                break; // Exit the loop if parsing is successful
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer for points.");
+            }
+        }
     }
     
     public override void RecordEvent(GoalManager goalManager)
@@ -19,9 +36,9 @@ public class EternalGoal : Goal
     {
         return false;
     }
-
-    public override string GetStringRepresentation()
+    
+    public override string GetStringRepresentation() 
     {
-        return $"{GetShortName()} - {GetDescription()} ({GetPoints()} points)";
+        return $"{(IsComplete() ? "[x]" : "[ ]")} {GetShortName()} - {GetDescription()} ({GetPoints()} points)";
     }
 }
