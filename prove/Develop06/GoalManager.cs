@@ -2,26 +2,14 @@ using System;
 
 public class GoalManager
 {
-    protected List<Goal> _goals = new List<Goal>();
-    protected int _score = 0;
-
-    public string GetGoalsString()
-    {
-        string goalsString = "";
-        foreach (Goal goal in _goals)
-        {
-            goalsString += goal.GetShortName() + ": " + goal.GetDescription() + "\n";
-        }
-        return goalsString;
-    }
-
-    public int GetScore()
-    {
-        return _score;
-    }
+    public List<Goal>_goals;
+    public int _score = 0;
 
     public GoalManager()
-    {}
+    {
+        _goals = new List<Goal>();
+        _score = 0;
+    }
     
     public void Start()
     {}
