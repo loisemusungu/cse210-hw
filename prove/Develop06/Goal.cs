@@ -44,10 +44,8 @@ public abstract class Goal
 
     public abstract bool IsComplete();
 
-    public void GetDetailsString()
-    {
-        Console.WriteLine($"Goal: {_shortName}\n\n{_description}\n\nPoints: {_points}");
-    }
+    public virtual void GetDetailsString()
+    {}
 
     public abstract void GetStringRepresentation();
 }
