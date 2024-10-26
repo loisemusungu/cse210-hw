@@ -114,14 +114,17 @@ public void ListGoalNames()
     }
 
     public void LoadGoals()
-    {
-        if (!File.Exists("goals.txt"))
+{
+        Console.Write("Enter the name of the file to load goals from (e.g., goals.txt): ");
+        string fileName = Console.ReadLine();
+
+        if (!File.Exists(fileName))
         {
-            Console.WriteLine("No saved goals found.");
+            Console.WriteLine("No saved goals found with that filename.");
             return;
         }
 
-        using (StreamReader reader = new StreamReader("goals.txt"))
+        using (StreamReader reader = new StreamReader(fileName))
         {
             while (!reader.EndOfStream)
             {
@@ -153,6 +156,5 @@ public void ListGoalNames()
                 }
             }
         }
-        Console.WriteLine("Goals have been loaded and added to the existing list.");
     }
 }
