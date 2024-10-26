@@ -1,0 +1,15 @@
+SimpleGoal
+Eat fruits
+Healthy habits
+100
+false
+EternalGoal
+Read the Scriptures for 30 min
+Everyday
+100
+false
+ChecklistGoal
+Go to the gym
+Work out
+300
+false
