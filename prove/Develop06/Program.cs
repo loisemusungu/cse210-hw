@@ -1,5 +1,6 @@
-using System;
+// Loise Musungu : Eternal Quest Program
 
+using System;
 class Program
 {
     static void Main(string[] args)
