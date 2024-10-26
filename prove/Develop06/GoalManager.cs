@@ -18,21 +18,21 @@ public class GoalManager
         Console.WriteLine("Player Score: " + _score);
     }
 
-    public void ListGoalNames()
+public void ListGoalNames()
+{
+    if (_goals.Count == 0)
     {
-        if (_goals.Count == 0)
-        {
-            Console.WriteLine("No goals have been created yet.");
-            return;
-        }
-
-        for (int i = 0; i < _goals.Count; i++)
-        {
-            // Display checkbox based on completion status
-            string checkbox = _goals[i].IsComplete() ? "[x]" : "[ ]";
-            Console.WriteLine($"{i + 1}. {checkbox} {_goals[i].GetShortName()} ({_goals[i].GetDescription()})");
-        }
+        Console.WriteLine("No goals have been created yet.");
+        return;
     }
+
+    for (int i = 0; i < _goals.Count; i++)
+    {
+        // Use the string representation specific to each goal type
+        Console.WriteLine($"{i + 1}. {_goals[i].GetStringRepresentation()}");
+    }
+}
+
 
     public void CreateGoal()
     {
