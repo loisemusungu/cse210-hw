@@ -1,3 +1,5 @@
+using System;
+
 public class ChecklistGoal : Goal
 {
     private int _bonus;
@@ -38,20 +40,21 @@ public class ChecklistGoal : Goal
 
     public override void RecordEvent(GoalManager goalManager)
     {
-        _timesAccomplished++;
         if (_timesAccomplished < _requiredCompletions)
         {
+            _timesAccomplished++;
             goalManager.AddPoints(_points);
             Console.WriteLine($"Event recorded for {GetShortName()}. You earned {_points} points. Progress: {_timesAccomplished}/{_requiredCompletions}");
-        }
-        else if (_timesAccomplished == _requiredCompletions)
-        {
-            goalManager.AddPoints(_points + _bonus);
-            Console.WriteLine($"Event recorded for {GetShortName()}. You completed the goal and earned {_points} points and a bonus of {_bonus} points!");
+            
+            if (_timesAccomplished == _requiredCompletions)
+            {
+                goalManager.AddPoints(_bonus);
+                Console.WriteLine($"Congratulations! You've completed the goal and earned an additional bonus of {_bonus} points!");
+            }
         }
         else
         {
-            Console.WriteLine($"Goal {GetShortName()} has already been completed.");
+            Console.WriteLine($"Goal '{GetShortName()}' has already been completed.");
         }
     }
 
