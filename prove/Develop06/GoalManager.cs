@@ -114,7 +114,7 @@ public class GoalManager
     }
 
     public void LoadGoals()
-{
+    {
         Console.Write("Enter the name of the file to load goals from (e.g., goals.txt): ");
         string fileName = Console.ReadLine();
 
