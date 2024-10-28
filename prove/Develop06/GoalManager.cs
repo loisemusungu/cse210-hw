@@ -93,7 +93,10 @@ public class GoalManager
 
     public void SaveGoals()
     {
-        using (StreamWriter writer = new StreamWriter("goals.txt"))
+        Console.Write("Enter the name of the file to save the goals from (e.g., goals.txt): ");
+        string fileName = Console.ReadLine();
+
+        using (StreamWriter writer = new StreamWriter(fileName))
         {
             foreach (Goal goal in _goals)
             {
@@ -147,13 +150,13 @@ public class GoalManager
                     goal = new ChecklistGoal();
                 }
 
-                if (goal != null)
+                /*if (goal != null)
                 {
                     goal.SetShortName(shortName);
                     goal.SetDescription(description);
                     goal.SetPoints(points);
                     _goals.Add(goal); // Add to the existing list
-                }
+                }*/
             }
         }
     }
