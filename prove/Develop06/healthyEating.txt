@@ -1,0 +1,5 @@
+SimpleGoal
+Eat healthy
+Eat a fruit
+100
+true
