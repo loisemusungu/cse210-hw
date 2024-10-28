@@ -133,7 +133,7 @@ public class GoalManager
             {
                 string goalType = reader.ReadLine();
                 string shortName = reader.ReadLine();
-                string description = reader.ReadLine();
+                string description = reader.ReadLine(); 
                 int points = Convert.ToInt32(reader.ReadLine());
 
                 Goal goal = null;
@@ -150,13 +150,13 @@ public class GoalManager
                     goal = new ChecklistGoal();
                 }
 
-                /*if (goal != null)
+                if (goal != null)
                 {
                     goal.SetShortName(shortName);
                     goal.SetDescription(description);
                     goal.SetPoints(points);
                     _goals.Add(goal); // Add to the existing list
-                }*/
+                }
             }
         }
     }

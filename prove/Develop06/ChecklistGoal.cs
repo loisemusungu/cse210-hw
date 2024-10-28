@@ -2,9 +2,39 @@ using System;
 
 public class ChecklistGoal : Goal
 {
-    private int _bonus;
-    private int _timesAccomplished;
-    private int _requiredCompletions;
+    protected int _bonus;
+    protected int _timesAccomplished;
+    protected int _requiredCompletions;
+
+    public int GetBonus()
+    {
+        return _bonus;
+    }
+
+    public void SetBonus(int bonus)
+    {
+        _bonus = bonus;
+    }
+
+    public int GetTimesAccomplished()
+    {
+        return _timesAccomplished;
+    }
+
+    public void SetTimesAccomplished(int timesAccomplished)
+    {
+        _timesAccomplished = timesAccomplished;
+    }
+
+    public int GetRequiredCompletions()
+    {
+        return _requiredCompletions;
+    }
+
+    public void SetRequiredCompletions(int requiredCompletions)
+    {
+        _requiredCompletions = requiredCompletions;
+    }
 
     public ChecklistGoal()
     {
