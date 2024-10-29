@@ -3,43 +3,42 @@ using System.Collections.Generic;
 
 public class Exercise
 {
-    protected int _distance = 0;
-    protected int _time = 0;
-    protected DateTime currentDate = DateTime.Now;
+    protected double _distance = 0;
+    protected double _time = 0;
+    protected DateTime currentDate = DateTime.Now; 
 
-    public int GetDistance()
+    public double GetDistance()
     {
         return _distance;
     }
 
-    public void SetDistance(int distance)
+    public void SetDistance(double distance)
     {
         _distance = distance;
     }
 
-    public int GetTime()
+    public double GetTime()
     {
         return _time;
     }
 
-    public void SetTime(int time)
+    public void SetTime(double time)
     {
         _time = time;
     }
 
-    public double GetSpeed()
+    public virtual double GetSpeed()
     {
-        return (double)(_distance / _time) * 60;
+        return (_distance / _time) * 60;
     }
 
-    public double GetPace()
+    public virtual double GetPace()
     {
-        return (double)_time / _distance;
+        return _time / _distance;
     }
 
     public virtual void GetSummary()
     {
-        Console.WriteLine($"{currentDate} ({_time} min) - Distance {_distance} miles, Speed {GetSpeed()} mph, Pace {GetPace()} minutes per mile");
-
+    
     }
 }
