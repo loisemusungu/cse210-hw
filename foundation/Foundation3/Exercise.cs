@@ -39,7 +39,7 @@ public class Exercise
 
     public virtual void GetSummary()
     {
-        Console.WriteLine($"Date: {currentDate} - Distance {_distance} miles, Speed {GetSpeed()} mph, Pace {GetPace()} minutes per mile");
+        Console.WriteLine($"{currentDate} ({_time} min) - Distance {_distance} miles, Speed {GetSpeed()} mph, Pace {GetPace()} minutes per mile");
 
     }
 }
