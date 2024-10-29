@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 public class Exercise
 {
@@ -7,12 +6,12 @@ public class Exercise
     protected double _time = 0;
     protected DateTime currentDate = DateTime.Now; 
 
-    public double GetDistance()
+    public virtual double GetDistance()
     {
         return _distance;
     }
 
-    public void SetDistance(double distance)
+    public virtual void SetDistance(double distance)
     {
         _distance = distance;
     }
