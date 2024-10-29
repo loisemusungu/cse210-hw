@@ -2,7 +2,7 @@ using System;
 
 public class Running : Exercise
 {
-    public Running(int distance, int time)
+    public Running(double distance, double time)
     {
         SetDistance(distance);
         SetTime(time);
@@ -10,6 +10,7 @@ public class Running : Exercise
 
     public override void GetSummary()
     {
-        Console.WriteLine($"{currentDate} Running ({_time} min) - Distance {GetDistance()} miles, Speed {GetSpeed()} mph, Pace {GetPace()} minutes per mile");
+        string formattedDate = currentDate.ToString("dd MMM yyyy");
+        Console.WriteLine($"{formattedDate} Running ({_time} min) - Distance {GetDistance()} km, Speed {GetSpeed()} kmh, Pace {GetPace()} minutes per km");
     }
 }
