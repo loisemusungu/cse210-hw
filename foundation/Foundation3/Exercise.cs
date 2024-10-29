@@ -29,12 +29,12 @@ public class Exercise
 
     public virtual double GetSpeed()
     {
-        return (_distance / _time) * 60;
+        return Math.Round((_distance / _time) * 60, 2);
     }
 
     public virtual double GetPace()
     {
-        return _time / _distance;
+        return Math.Round(_time / _distance, 2);
     }
 
     public virtual void GetSummary()
